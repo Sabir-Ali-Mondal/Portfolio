@@ -4,695 +4,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabir Ali Mondal's Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <title>Sabir Ali Mondal | Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16/lib/typed.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-oTYyTzG2ebKIn6iOt7ewRHUI8JrAxUYI69S/hU/jtaLmo+3la/e2/xW2V5lyURmM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Roboto Mono', monospace;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            overflow-x: hidden;
-            margin: 0;
-        }
+        :root {
+            --bg-light: #f0f7ff;
+            --text-light: #1f2937;
+            --card-bg-light: rgba(255, 255, 255, 0.6);
+            --border-light: #d1d5db;
+            --accent-light: #3b82f6;
+            --accent-hover-light: #2563eb;
+            --shadow-light: rgba(0, 0, 0, 0.1);
 
-        .hero {
-            background-image: url('https://res.cloudinary.com/dmttn34te/image/upload/v1731935288/Sabir_Ali_Mondal_ikncvo.jpg');
-            background-size: cover;
-            height: 500px;
-            width: auto;
-            max-width: 600px;
-            margin-top: 100px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .hero-border {
-            position: relative;
-            display: inline-block;
-            padding: 20px;
-            border-radius: 15px 0px;
-            background: linear-gradient(90deg, #00ff00, #4800ff, #e00031);
-            background-size: 300% 300%;
-            animation: gradientMove 10s infinite linear;
-        }
-
-        @keyframes gradientMove {
-            0% {
-                background-position: 0 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0 50%;
-            }
-        }
-
-
-
-        .text-gradient {
-            font-size: 2.0rem;
-            font-family: serif;
-            font-weight: 800;
-            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-            /* Matches font-bold */
-            background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 3s infinite linear;
-        }
-
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            100% {
-                background-position: 100% 50%;
-            }
+            --bg-dark: #0d1117;
+            --text-dark: #c9d1d9;
+            --card-bg-dark: rgba(22, 27, 34, 0.7);
+            --border-dark: #30363d;
+            --accent-dark: #58a6ff;
+            --accent-hover-dark: #388bfd;
+            --shadow-dark: rgba(0, 0, 0, 0.3);
         }
 
         .light-theme {
-            background-color: #e0f2f7;
-            color: #333;
-        }
-
-        .light-theme .text-light {
-            color: yellow;
-        }
-
-        .light-theme a {
-            color: #007bff;
-        }
-
-        .light-theme h1,
-        .light-theme h2,
-        .light-theme h3 {
-            color: #333;
-        }
-
-        .light-theme .main-container {
-            background-color: #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 5px;
-            margin-left: 10px;
-            margin-right: 10px;
+            --bg-color: var(--bg-light);
+            --text-color: var(--text-light);
+            --card-bg-color: var(--card-bg-light);
+            --border-color: var(--border-light);
+            --accent-color: var(--accent-light);
+            --accent-hover-color: var(--accent-hover-light);
+            --shadow-color: var(--shadow-light);
         }
 
         .dark-theme {
-            background-color: #293b50;
-            color: #eee;
+            --bg-color: var(--bg-dark);
+            --text-color: var(--text-dark);
+            --card-bg-color: var(--card-bg-dark);
+            --border-color: var(--border-dark);
+            --accent-color: var(--accent-dark);
+            --accent-hover-color: var(--accent-hover-dark);
+            --shadow-color: var(--shadow-dark);
         }
 
-        .dark-theme a {
-            color: #66d1ff;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.5s ease, color 0.5s ease;
+            overflow-x: hidden;
         }
 
-        .dark-theme h1,
-        .dark-theme h2,
-        .dark-theme h3 {
-            color: #b5e1ff;
+        .main-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1.5rem;
         }
 
-        .dark-theme .main-container {
-            background-color: #171636;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 5px;
-            margin-left: 10px;
-            margin-right: 10px;
+        .card {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 var(--shadow-color);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
-        .dark-theme .bg-container-1 {
-            background-color: #12051f;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 var(--shadow-color);
         }
 
-        .education-item {
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin-bottom: 5px;
-            border-radius: 8px;
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            text-align: center;
         }
 
-        .dark-theme .education-item {
-            background-color: #12051f;
-            border: 1px solid #556b81;
+        .text-accent {
+            color: var(--accent-color);
+        }
+        
+        a {
+            color: var(--accent-color);
+            transition: color 0.3s ease;
         }
 
-        .education-item h4 {
-            margin-top: 0;
+        a:hover {
+            color: var(--accent-hover-color);
         }
-
-        #sidebarToggle {
-            z-index: 1000;
-        }
-
+        
         .sidebar {
-            padding-top: 30px;
-            width: 250px;
-            height: 100vh;
-            background-color: #333;
-            color: #fff;
+            background-color: #111827;
             position: fixed;
-            left: 0;
             top: 0;
-            overflow-y: auto;
+            left: 0;
+            height: 100vh;
+            width: 250px;
             transform: translateX(-100%);
-            /* Initially hidden */
-            transition: transform 0.3s ease;
-            z-index: 100;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: 1000;
+            padding: 2rem 1rem;
         }
 
         .sidebar.open {
             transform: translateX(0);
         }
 
-        .sidebar a {
+        .sidebar-link {
             display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: #fff;
+            color: #d1d5db;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease, color 0.2s ease;
         }
 
-        .sidebar a:hover {
-            background-color: #555;
+        .sidebar-link:hover {
+            background-color: #374151;
+            color: white;
         }
 
-        .gap-container {
-            height: 100px;
-        }
-
-        .gap-container-2 {
-            height: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-            }
-
-            .main-container {
-                margin: 0;
-            }
-        }
-
-        /*Responsive Styles*/
-        @media (max-width: 768px) {
-            .grid-cols-2 {
-                grid-template-columns: 1fr;
-            }
-
-            .grid-cols-3 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Custom styles for Previous button */
-        .custom-prev {
-            background-color: #4caf50;
-            /* Green background */
+        #sidebarToggle, #themeToggle {
+            z-index: 1010;
+            position: fixed;
+            top: 1rem;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            /* Circular button */
-            width: 50px;
-            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0.5;
-            transition: all 0.3s ease;
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
         }
 
-        .custom-prev:hover {
-            background-color: #45a049;
-            /* Darker green on hover */
-            opacity: 1;
+        #sidebarToggle { left: 1rem; }
+        #themeToggle { right: 1rem; }
+        
+        .hero-image-wrapper {
+            padding: 8px;
+            border-radius: 1.5rem;
+            background: linear-gradient(45deg, #00ff87, #60efff, #ff76e2, #fffc60);
+            background-size: 400% 400%;
+            animation: gradient-flow 10s ease infinite;
+        }
+        
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        .custom-prev .carousel-control-prev-icon {
-            background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23fff" viewBox="0 0 16 16"><path d="M11.354 1.354a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/></svg>');
-            background-size: 1.5em;
-            background-repeat: no-repeat;
+        .hero-image {
+            background-image: url('https://res.cloudinary.com/dmttn34te/image/upload/v1731935288/Sabir_Ali_Mondal_ikncvo.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            width: 100%;
+            border-radius: 1rem;
         }
 
-        /* Custom styles for Next button */
-        .custom-next {
-            background-color: #2196f3;
-            /* Blue background */
-            border-radius: 50%;
-            /* Circular button */
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0.5;
-            transition: all 0.3s ease;
+        .text-gradient {
+            font-weight: 800;
+            background: linear-gradient(90deg, #ff9933, #e9e9e9, #138808);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: text-shine 5s linear infinite;
         }
+        
+        @keyframes text-shine { to { background-position: 200% center; } }
 
-        .custom-next:hover {
-            background-color: #1e88e5;
-            /* Darker blue on hover */
-            opacity: 1;
-        }
-
-        .custom-next .carousel-control-next-icon {
-            background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23fff" viewBox="0 0 16 16"><path d="M4.646 1.354a.5.5 0 0 0 0 .708L10.293 8 4.646 13.646a.5.5 0 0 0 .708.708l6-6a.5.5 0 0 0 0-.708l-6-6a.5.5 0 0 0-.708 0z"/></svg>');
-            background-size: 1.5em;
-            background-repeat: no-repeat;
-        }
-
-        .testimonial {
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .btn {
+            display: inline-block;
             text-align: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            color: #fff !important;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-primary { background-color: #3b82f6; }
+        .btn-primary:hover { background-color: #2563eb; }
+        .btn-secondary { background-color: #f59e0b; }
+        .btn-secondary:hover { background-color: #d97706; }
+        
+        .tech-pill {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+        .dark-theme .tech-pill {
+             background-color: var(--border-dark);
+             color: var(--text-dark);
+        }
+        .light-theme .tech-pill {
+            background-color: #e0e7ff;
+            color: #4338ca;
         }
 
-        .dark-theme .testimonial {
-            background-color: #12051f;
-        }
+        .swiper-pagination-bullet { background: var(--accent-color); opacity: 0.5; }
+        .swiper-pagination-bullet-active { opacity: 1; }
 
-        .testimonial p {
-            margin-bottom: 10px;
-        }
-
-        .text-gray-400 {
-            color: #6c757d;
-        }
-
-        .dark-theme .carousel-indicators li {
-            background-color: var(--bs-secondary);
-            /* Secondary color in Bootstrap */
-            border: 1px solid #fff;
-            /* Optional: Makes it stand out with a white border */
-        }
-
-        .light-theme .carousel-indicators li {
-            border: 1px solid grey;
-            /* Optional: Makes it stand out with a white border */
-
-        }
-
-        .dark-theme .carousel-indicators .active {
-            background-color: var(--bs-secondary);
-            /* Secondary color when active */
-            border-color: #fff;
-            /* Optional for consistency */
-        }
-
-        .light-theme .carousel-indicators .active {
-            background-color: var(--bs-secondary);
-            /* Secondary color when active */
-            border: 1px solid grey;
-            /* Optional: Makes it stand out with a white border */
-        }
     </style>
 </head>
 
-<body class="light-theme">
-    <div id="app">
-        <aside id="sidebar" class="sidebar">
-            <div class="p-4">
-                <h2 href="#" class="text-2xl font-bold mb-5 text-light mt-3">Sabir Ali Mondal</h2>
-                <nav>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects & Creativity</a>
-                    <a href="#education">Education</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#testimonials">Testimonials</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-            </div>
-        </aside>
-        <button id="sidebarToggle" class="fixed top-4 left-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-700">
-            <i class="fas fa-bars"></i>
-        </button>
-        <nav class="bg-gray-800 pt-4 pb-4 fixed w-full z-20">
-            <div class="container mx-auto flex justify-between items-center">
-                <button id="themeToggle" class="text-white pl-3 rounded hover:bg-gray-700">
-                    <i class="fas fa-adjust"></i>
-                </button>
-            </div>
-        </nav>
-        <section id="hero" class="bg-cover bg-center min-h-[60vh]" style="background-image: url('https://source.unsplash.com/random/1920x1080/?blue,sky');">
-            <div class="d-none d-md-block gap-container-2"></div>
-            <div class="d-md-none gap-container"></div>
-            <div class="row align-items-center">
-                <!-- Left Column: Sabir Ali Mondal and About Me -->
-                <div class="col-12 col-md-6 order-md-2 d-flex flex-column justify-content-center mt-md-0">
-                    <!-- Name -->
-                    <a href="#" class="text-center font-bold text-gradient mb-4">Sabir Ali Mondal</a>
-                    <!-- About Me Section -->
-                    <div id="about" class="d-none d-md-block text-center">
-                        <h2 class=" font-semibold mb-3">About Me</h2>
-                        <p class=" p-3 text-xs	text-left">
-                            I'm Sabir Ali Mondal, a passionate Full Stack Developer with a keen interest in AI, machine learning, and cloud computing. I love exploring new technologies, building innovative solutions, and creating impactful, user-friendly applications. Currently, I'm honing my full-stack skills to craft dynamic websites and applications.
-                        </p>
-                    </div>
-                </div>
-                <!-- Right Column: Hero Content -->
-                <div class="col-12 col-md-6 order-md-1 d-flex justify-content-center">
-                    <div class="hero-border shadow-md">
-                        <div class="hero  d-flex flex-column justify-content-end p-5">
-                            <h2 class="text-xl mb-2 text-white">Full Stack Developer</h2>
-                            <a href="#contact" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Contact Me</a>
-                            <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1 flex justify-center items-center">
-                                <i class="fas fa-file-pdf mr-2"></i> View Resume
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="about" class="d-md-none py-12">
-            <div class="main-container">
-                <h2 class="text-3xl font-bold mb-6">About Me</h2>
-                <p>I'm Sabir Ali Mondal, a passionate Full Stack Developer with a keen interest in AI, machine learning, and cloud computing. I love exploring new technologies, building innovative solutions, and creating impactful, user-friendly applications. Currently, I'm honing my full-stack skills to craft dynamic websites and applications.</p>
-            </div>
-        </section>
-        <section id="projects" class="py-12">
-            <div class="main-container">
-                <h2 class="text-3xl font-bold mb-6">Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-container-1 rounded-lg shadow-md p-6 dark-theme:bg-[#394d62] dark-theme:text-white">
-                        <h2 class="text-2xl font-bold text-center text-info dark:text-white mb-8">
-                            Innovative Project
-                        </h2>
-                        <h5 class="text-center"><span class="text-success">3.0 | 2.0 | 1.0 </span>Version's <br> of <span class="font-italic text-primary">Beam Focus</span> (A Innovative Learning Portal)</h5>
-                        <div class="mx-auto gap-6">
-                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                                </ol>
-                                <div class="carousel-inner p-3">
-                                    <div class="carousel-item active">
-                                        <!-- Beam Focus 3.0 -->
-                                        <div class="bg-container-1 rounded-lg p-6 dark:bg-[#394d62] dark:text-white">
-                                            <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1731956930/Screenshot_20241118_225617_Chrome_dci2fq.jpg" alt="Beam Focus 3.0" class="mb-4 rounded-lg w-full object-cover">
-                                            <a href="https://beamfocusnew3.ccbp.tech/" class="text-xl font-bold mb-2">Beam Focus 3.0</a>
-                                            <p class="text-gray-600 dark:text-gray-300 mb-4">
-                                                The most automated version of Beam Focus with advanced features.
-                                            </p>
-                                            <a href="https://beamfocusnew3.ccbp.tech/" class="text-blue-500 hover:underline">
-                                                View Project
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <!-- Beam Focus 2.0 -->
-                                        <div class="bg-container-1 rounded-lg p-6 dark:bg-[#394d62] dark:text-white">
-                                            <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1731956930/Screenshot_20241118_225528_Chrome_vtkrow.jpg" alt="Beam Focus 2.0" class="mb-4 rounded-lg w-full object-cover">
-                                            <a href="https://beamfocusnew.ccbp.tech/" class="text-xl font-bold mb-2">Beam Focus 2.0</a>
-                                            <p class="text-gray-600 dark:text-gray-300 mb-4">
-                                                Enhanced design and additional features for a better experience.
-                                            </p>
-                                            <a href="https://beamfocusnew.ccbp.tech/" class="text-blue-500 hover:underline">
-                                                View Project
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <!-- Beam Focus 3.0 -->
-                                        <div class="bg-container-1 rounded-lg p-6 dark:bg-[#394d62] dark:text-white">
-                                            <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1731956930/Screenshot_20241118_225617_Chrome_dci2fq.jpg" alt="Beam Focus 3.0" class="mb-4 rounded-lg w-full object-cover">
-                                            <a href="https://beamfocusnew3.ccbp.tech/" class="text-xl font-bold mb-2">Beam Focus 3.0</a>
-                                            <p class="text-gray-600 dark:text-gray-300 mb-4">
-                                                The most automated version of Beam Focus with advanced features.
-                                            </p>
-                                            <a href="https://beamfocusnew3.ccbp.tech/" class="text-blue-500 hover:underline">
-                                                View Project
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <!-- Beam Focus 1.0 -->
-                                        <div class="bg-container-1 rounded-lg p-6 dark:bg-[#394d62] dark:text-white">
-                                            <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1731894938/Screenshot_2024-11-18_072344_nrlg6q.png" alt="Beam Focus 1.0" class="mb-4 rounded-lg w-full object-cover">
-                                            <a href="https://beamfocus2.ccbp.tech/" class="text-xl font-bold mb-2">Beam Focus 1.0</a>
-                                            <p class="text-gray-600 dark:text-gray-300 mb-4">
-                                                The introductory version of Beam Focus, marking the beginning.
-                                            </p>
-                                            <a href="https://beamfocus2.ccbp.tech/" class="text-blue-500 hover:underline">
-                                                View Project
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev custom-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next custom-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="projectCarousel" class="carousel slide bg-container-1 rounded-lg shadow-md p-6 dark-theme:bg-[#394d62] dark-theme:text-white" data-ride="carousel" data-interval="3000" style="position: relative;">
-                        <h2 class="text-2xl font-bold text-center text-info dark:text-white mb-8">
-                            Innovative Project
-                        </h2> <!-- Carousel Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#projectCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#projectCarousel" data-slide-to="1"></li>
-                        </ol>
-                        <!-- Carousel Inner -->
-                        <div class="carousel-inner p-3">
-                            <!-- Slide 1: Dynamic Date Countdown Animation -->
-                            <div class="carousel-item active">
-                                <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1731992312/Date_Counter_v3stla.gif" alt="Dynamic Date Countdown Animation" class="mb-4 rounded-lg">
-                                <a href="https://dateanimnready.ccbp.tech/" target="_blank" class="text-xl font-bold mb-2">Dynamic Date Countdown Animation</a>
-                                <p>A showcase of an innovative project demonstrating advanced skills in development and creativity. Where date counts in a fun way and tries to create a GIF animation like a pro using canvas.</p>
-                                <a href="https://dateanimnready.ccbp.tech/" target="_blank" class="text-blue-500 hover:underline">View Project</a>
-                            </div>
-                            <!-- Slide 2: Date Counter Project -->
-                            <div class="carousel-item">
-                                <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1731993454/Date-Counter_g7iqep.gif" alt="Date Counter Project" class="mb-4 rounded-lg">
-                                <a href="https://datecounter.ccbp.tech/" target="_blank" class="text-xl font-bold mb-2">Date Counter Project</a>
-                                <p>A project that counts a date with a visually striking "red and dangerous" animation, delivering a dynamic and engaging user experience.</p>
-                                <a href="https://datecounter.ccbp.tech/" target="_blank" class="text-blue-500 hover:underline">View Project</a>
-                            </div>
-                        </div>
-                        <!-- Carousel Controls -->
-                        <a class="carousel-control-prev custom-prev" href="#projectCarousel" role="button" data-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: 15px;">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next custom-next" href="#projectCarousel" role="button" data-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: 15px;">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <div class="bg-container-1 rounded-lg shadow-md p-6 dark-theme:bg-[#394d62] dark-theme:text-white">
-                        <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1731925693/tplImgc5aea15e8dda48d189737e15735f13d8_in4shp.png" alt="HTML & Bootstrap Collection" class="mb-4 rounded-lg">
-                        <h3 class="text-xl font-bold mb-2">Collection of HTML & Bootstrap Projects</h3>
-                        <p>A showcase of various HTML and Bootstrap projects demonstrating responsive web design and development.</p>
-                        <a href="https://github.com/Sabir-Ali-Mondal/Collection-of-HTML-and-CSS-projects.git" class="text-blue-500 hover:underline">View Collection</a>
-                    </div>
-                </div>
-                <h2 class="text-3xl font-bold mb-6 mt-4">Creativity</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-container-1 rounded-lg shadow-md p-6 dark-theme:bg-[#394d62] dark-theme:text-white">
-                        <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1731939876/WhatsApp_Image_2024-11-18_at_5.32.57_PM_ffncfc.jpg" alt="YouTube Videos Made by Me" class="mb-4 rounded-lg">
-                        <a href="https://www.youtube.com/@SabirAliMondal1" target="_blank" class="text-xl font-bold mb-2">YouTube Videos Made by Me</a>
-                        <p>Videos on cloud computing, AI/ML, AI tools like ChatGPT, and no-code tools.An exploration of Virtual Reality, Augmented Reality, Mixed Reality, and Extended Reality through some short-lenth video.</p>
-                        <a href="https://www.youtube.com/@SabirAliMondal1" target="_blank" class="text-blue-500 hover:underline">View YouTube Channel</a>
-                    </div>
-                    <div class="bg-container-1 rounded-lg shadow-md p-6 dark-theme:bg-[#394d62] dark-theme:text-white">
-                        <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1732017325/newinventionchannels4_banner_ezbioo.jpg" alt="New Invention" class="mb-4 rounded-lg">
-                        <a href="https://www.youtube.com/@newinvention2517" target="_blank" class="text-xl font-bold mb-2">My Previous Youtube Channel: New Invention</a>
-                        <p class="pt-2">
-                            Sharing <span class="text-primary">innovative ideas</span> and techniques for young minds,
-                            exploring <span class="text-success">computer and software tips and tricks</span>,
-                            and highlighting <span class="text-info">Android device capabilities</span>.
-                            Discover content on <span class="text-warning">Google Maps anomalies</span>,
-                            <span class="text-danger">gaming mods</span>, <span class="font-weight-bold">Termux hacks</span>, password recovery,
-                            Limbo emulator setups, and Android & iOS tricks.
-                        </p>
-                        <p>
-                            Popular topics include <span class="text-success">Free Fire and BGMI mods</span>,
-                            <span class="text-info">command-line automation with Termux</span>,
-                            and <span class="text-warning">educational password recovery tips</span>.
-                            Fun yet educational content encourages <span class="text-primary">responsible use of hacks</span>.
-                        </p>
-                        <a href="https://www.youtube.com/@newinvention2517" target="_blank" class="text-blue-500 hover:underline">
-                            View YouTube Channel
-                        </a>
-                    </div>
-                    <div class="bg-container-1 rounded-lg shadow-md p-6 dark-theme:bg-[#394d62] dark-theme:text-white">
-                        <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1731894937/FFFFFF_2_kn9flf.png" alt="Poems Written by Me" class="mb-4 rounded-lg">
-                        <h3 class="text-xl font-bold mb-2">Poems Written by Me</h3>
-                        <p>A collection of poems that I've written since childhood, exploring creativity through words.</p>
-                        <a href="https://newinventionsabir.blogspot.com/" class="text-blue-500 hover:underline">View Blogger Post's</a>
-                    </div>
+<body class="dark-theme">
+    <button id="sidebarToggle"><i class="fas fa-bars"></i></button>
+    <button id="themeToggle"><i class="fas fa-sun"></i></button>
 
-                </div>
-            </div>
-        </section>
-        <section id="education" class="py-12">
+    <aside id="sidebar" class="sidebar">
+        <h2 class="text-2xl font-bold mb-8 text-white">Sabir Ali Mondal</h2>
+        <nav>
+            <a href="#hero" class="sidebar-link">Home</a>
+            <a href="#projects" class="sidebar-link">Projects</a>
+            <a href="#achievements" class="sidebar-link">Achievements</a>
+            <a href="#skills" class="sidebar-link">Skills</a>
+            <a href="#education" class="sidebar-link">Education</a>
+            <a href="#testimonials" class="sidebar-link">Testimonials</a>
+            <a href="#contact" class="sidebar-link">Contact</a>
+        </nav>
+    </aside>
+
+    <main id="app">
+        <section id="hero" class="min-h-screen flex items-center">
             <div class="main-container">
-                <h2 class="text-3xl font-bold mb-6">Education</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="education-item">
-                        <h4>Bachelor of Technology (BTech) in Computer Science</h4>
-                        <p>Cooch Behar Government Engineering College (Sep 2023 – Sep 2027)</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1 text-center md:text-left" data-aos="fade-right">
+                        <h1 class="text-4xl lg:text-6xl font-bold text-gradient mb-2">Sabir Ali Mondal</h1>
+                        <p class="text-2xl lg:text-3xl mb-4 font-semibold text-accent">Computer Science Student</p>
+                        <p class="mb-6 max-w-xl mx-auto md:mx-0">I'm a student at CGEC passionate about web development and AI, turning ideas into simple, innovative tools. I build lightweight, frontend-first solutions and leverage AI APIs through prompt engineering.</p>
+                        <a href="#contact" class="btn btn-primary mr-2 mb-2">Contact Me</a>
+                        <a href="#" class="btn btn-secondary mb-2"><i class="fas fa-file-pdf mr-2"></i>View Resume</a>
                     </div>
-                    <div class="education-item">
-                        <h4>Full-stack development & Cloud technologies</h4>
-                        <p>Fellow Student, NxtWave (Apr 2024 – 2027)</p>
-                    </div>
-                    <div class="education-item">
-                        <h4>Higher Secondary Education (Science)</h4>
-                        <p>Raninagar High School (2021-2023) - Grade A</p>
-                    </div>
-                    <div class="education-item">
-                        <h4>Secondary Education</h4>
-                        <p>Darermath High School (2018-2021) - Grade AA</p>
-                    </div>
-                    <div class="education-item">
-                        <h4>Primary Education</h4>
-                        <p>St. Stephen's School, Shikarpur (Completed Dec 2017)</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="skills" class="py-12">
-            <div class="main-container">
-                <h2 class="text-3xl font-bold mb-6">Skills</h2>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <div class="p-4 border border-gray-300 rounded-lg text-center dark-theme:border-gray-600">
-                        <i class="fab fa-html5 text-5xl text-warning"></i><br>HTML
-                    </div>
-                    <div class="p-4 border border-gray-300 rounded-lg text-center dark-theme:border-gray-600">
-                        <i class="fab fa-css3-alt text-5xl text-blue-500"></i><br>CSS
-                    </div>
-                    <div class="p-4 border border-gray-300 rounded-lg text-center dark-theme:border-gray-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 text-blue-500 mx-auto" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
-                            <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3z" />
-                        </svg>
-                        <br>Bootstrap
-                    </div>
-                    <br>
-                    <div class="p-4 border border-gray-300 rounded-lg text-center dark-theme:border-gray-600">
-                        <i class="fas fa-c  text-5xl text-dark"></i><br>C Language
-                    </div>
-                    <div class="p-4 border border-gray-300 rounded-lg text-center dark-theme:border-gray-600">
-                        <i class="fab fa-python  text-5xl text-success"></i><br>Python
-                    </div>
-                    <br>
-                    <div class="p-4 border border-gray-300 rounded-lg text-center dark-theme:border-gray-600">
-                        <i class="fas fa-database  text-5xl text-info"></i><br>SQL
-                    </div>
-                    <div class="p-4 border border-gray-300 rounded-lg text-center dark-theme:border-gray-600">
-                        <i class="fab fa-aws  text-5xl text-danger"></i><br>AWS Server
+                    <div class="order-1 md:order-2" data-aos="fade-left" data-aos-delay="200">
+                        <div class="hero-image-wrapper">
+                            <div class="hero-image"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="testimonials" class="py-5">
+        
+        <section id="projects" class="py-20">
             <div class="main-container">
-                <h2 class="text-center font-weight-bold mb-4">Testimonials</h2>
-                <div class="swiper">
+                <h2 class="section-title">Innovative Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Sabir-Ali-Mondal/Not-Pi-Vision/main/assets/cover.png" alt="Not-Pi-Vision Project" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Not-Pi-Vision <span class="text-xs font-semibold text-accent">(Hackathon)</span></h3>
+                        <p class="mb-4 text-sm flex-grow">A smart tool that converts syllabus topics into visual learning experiences, designed as a fast, free, and lightweight alternative to PPT lessons for students and educators.</p>
+                        <div class="mt-auto">
+                            <div class="flex flex-wrap mb-2">
+                                <span class="tech-pill">JS</span><span class="tech-pill">Node.js</span><span class="tech-pill">Gemini API</span><span class="tech-pill">Prompt Eng.</span>
+                            </div>
+                            <a href="https://github.com/Sabir-Ali-Mondal/Not-Pi-Vision" target="_blank" class="font-semibold hover:underline">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://raw.githubusercontent.com/Sabir-Ali-Mondal/Frontend-AI/main/assets/cover.png" alt="Frontend-AI Chatbot" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Frontend-AI Chatbot</h3>
+                        <p class="mb-4 text-sm flex-grow">A browser-based AI chatbot built only with frontend technologies. It supports intelligent Q&A, dynamic calculations, and fully customizable training via JSON.</p>
+                        <div class="mt-auto">
+                           <div class="flex flex-wrap mb-2">
+                               <span class="tech-pill">HTML</span><span class="tech-pill">CSS</span><span class="tech-pill">JavaScript</span><span class="tech-pill">JSON</span>
+                           </div>
+                           <a href="https://github.com/Sabir-Ali-Mondal/Frontend-AI" target="_blank" class="font-semibold hover:underline">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                     <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://raw.githubusercontent.com/Sabir-Ali-Mondal/Man-Us/main/assets/cover.png" alt="Man-Us Project" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Man-Us</h3>
+                        <p class="mb-4 text-sm flex-grow">A respectful discussion platform for four fictional friends from different religions. Uses AI to support storytelling, moral exchange, and balanced conversation.</p>
+                        <div class="mt-auto">
+                            <div class="flex flex-wrap mb-2">
+                                <span class="tech-pill">Node.js</span><span class="tech-pill">SQLite</span><span class="tech-pill">Gemini API</span><span class="tech-pill">Bootstrap</span>
+                            </div>
+                            <a href="https://github.com/Sabir-Ali-Mondal/Man-Us" target="_blank" class="font-semibold hover:underline">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="https://via.placeholder.com/400x225/0d1117/58a6ff?text=Outside+of+Egg" alt="Outside of Egg Project" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Outside of Egg</h3>
+                        <p class="mb-4 text-sm flex-grow">A team project to help kids explore concepts beyond textbooks. Features imagination-based question answering, speech recognition, and concept exploration.</p>
+                         <div class="mt-auto">
+                            <div class="flex flex-wrap mb-2">
+                                <span class="tech-pill">Vercel</span><span class="tech-pill">Node.js</span><span class="tech-pill">Gemini API</span><span class="tech-pill">ChatGPT</span>
+                            </div>
+                            <a href="https://github.com/Sabir-Ali-Mondal/Outside-of-Egg" target="_blank" class="font-semibold hover:underline">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://raw.githubusercontent.com/Sabir-Ali-Mondal/Beam-Focus/main/assets/cover.png" alt="Beam Focus Project" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Beam Focus <span class="text-xs font-semibold text-accent">(Hackathon)</span></h3>
+                        <p class="mb-4 text-sm flex-grow">An AI Learning Assistant designed to guide students with a personalized learning map, featuring AI-driven doubt clearing, streak tracking, and YouTube integration.</p>
+                         <div class="mt-auto">
+                            <div class="flex flex-wrap mb-2">
+                                <span class="tech-pill">JS</span><span class="tech-pill">Bootstrap</span><span class="tech-pill">ChatGPT</span><span class="tech-pill">Perplexity AI</span>
+                            </div>
+                            <a href="https://github.com/Sabir-Ali-Mondal/Beam-Focus" target="_blank" class="font-semibold hover:underline">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="py-20">
+            <div class="main-container">
+                <h2 class="section-title">Achievements</h2>
+                <div class="max-w-2xl mx-auto" data-aos="fade-up">
+                    <div class="card text-center">
+                        <div class="text-4xl text-yellow-400 mb-4"><i class="fas fa-trophy"></i></div>
+                        <h3 class="text-2xl font-bold">2nd Place - Hack-O-Vation</h3>
+                        <p class="text-lg text-accent font-semibold">CGEC (2025)</p>
+                        <p class="mt-2">Awarded for the project "Not-Pi-Vision," an innovative tool for visual learning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20">
+            <div class="main-container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card" data-aos="fade-up">
+                        <h4 class="text-xl font-bold mb-3"><i class="fas fa-laptop-code mr-2 text-accent"></i>Frontend</h4>
+                        <p>HTML, CSS, JavaScript, Bootstrap</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="text-xl font-bold mb-3"><i class="fas fa-server mr-2 text-accent"></i>Backend & Cloud</h4>
+                        <p>Node.js, AWS, Vercel</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <h4 class="text-xl font-bold mb-3"><i class="fas fa-brain mr-2 text-accent"></i>AI & APIs</h4>
+                        <p>Gemini API, ChatGPT, Mistral AI, Perplexity AI, Rapid API</p>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <h4 class="text-xl font-bold mb-3"><i class="fas fa-code mr-2 text-accent"></i>Languages</h4>
+                        <p>Python, C</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="text-xl font-bold mb-3"><i class="fas fa-database mr-2 text-accent"></i>Databases</h4>
+                        <p>SQL (SQLite)</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <h4 class="text-xl font-bold mb-3"><i class="fas fa-lightbulb mr-2 text-accent"></i>Other</h4>
+                        <p>Prompt Engineering</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-20">
+            <div class="main-container">
+                <h2 class="section-title">Education</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card text-center" data-aos="fade-up">
+                        <h4 class="text-lg font-bold">B.Tech in Computer Science & Engineering</h4>
+                        <p class="text-accent">Cooch Behar Government Engineering College</p>
+                        <p class="text-sm">(2027 Expected)</p>
+                    </div>
+                    <div class="card text-center" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="text-lg font-bold">Full Stack Developer Program</h4>
+                        <p class="text-accent">NxtWave CCBP 4.0 Academy</p>
+                        <p class="text-sm">(Ongoing)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-20">
+            <div class="main-container">
+                <h2 class="section-title">Testimonials</h2>
+                <div class="swiper max-w-4xl mx-auto" data-aos="fade-up">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide testimonial">
-                            <p>"Sabir is a highly skilled and dedicated developer. He consistently exceeded expectations on our project."</p>
-                            <p class="text-gray-400">- Arif Sheikh, Whatsapp Stutus Manager</p>
-                        </div>
-                        <div class="swiper-slide testimonial">
-                            <p>"Working with Sabir was a pleasure. His communication is excellent, and his code is clean and efficient."</p>
-                            <p class="text-gray-400">- Akash Shah, CEO of SSB</p>
-                        </div>
-                        <div class="swiper-slide testimonial">
-                            <p>"Sabir’s ability to solve complex problems quickly was invaluable to our team."</p>
-                            <p class="text-gray-400">- Afsan Rahaman, Experienced Senior</p>
-                        </div>
-                        <div class="swiper-slide testimonial">
-                            <p>"I highly recommend Sabir for any project. His technical skills and professionalism are top-notch."</p>
-                            <p class="text-gray-400">- Jesmin Khatun, CEO at 'Speed Talk'</p>
-                        </div>
+                        <div class="swiper-slide card text-center"><p class="text-lg italic mb-4">"Sabir is a highly skilled and dedicated developer. He consistently exceeded expectations on our project."</p><p class="font-bold">- Arif Sheikh, <span class="text-accent">Whatsapp Status Manager</span></p></div>
+                        <div class="swiper-slide card text-center"><p class="text-lg italic mb-4">"Working with Sabir was a pleasure. His communication is excellent, and his code is clean and efficient."</p><p class="font-bold">- Akash Shah, <span class="text-accent">CEO of SSB</span></p></div>
+                        <div class="swiper-slide card text-center"><p class="text-lg italic mb-4">"Sabir’s ability to solve complex problems quickly was invaluable to our team."</p><p class="font-bold">- Afsan Rahaman, <span class="text-accent">Experienced Senior</span></p></div>
+                        <div class="swiper-slide card text-center"><p class="text-lg italic mb-4">"I highly recommend Sabir. His technical skills and professionalism are top-notch."</p><p class="font-bold">- Jesmin Khatun, <span class="text-accent">CEO at 'Speed Talk'</span></p></div>
                     </div>
-                    <!-- Pagination -->
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination mt-8"></div>
                 </div>
             </div>
         </section>
-        <section id="contact" class="py-12">
-            <div class="main-container">
-                <h2 class="text-3xl font-bold mb-6">Contact</h2>
-                <p>
-                    <i class="fas fa-envelope"></i> Email:
-                    <a href="mailto:sabir93cse@gmail.com?subject=&amp;body=Hi%20Sabir%20Ali%20Mondal" target="_blank">sabir93cse@gmail.com</a>
-                </p>
-                <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/sabir-ali-mondal/">Sabir Ali Mondal</a></p>
-                <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/Sabir-Ali-Mondal">GitHub Profile</a></p>
+
+        <footer id="contact" class="py-12 bg-opacity-50" style="background-color: var(--card-bg-dark)">
+            <div class="main-container text-center">
+                <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
+                <div class="flex justify-center items-center space-x-6 text-2xl">
+                    <a href="mailto:mondaljaker4@gmail.com" class="hover:text-white transform hover:scale-110 transition-transform"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+918695058453" class="hover:text-white transform hover:scale-110 transition-transform"><i class="fas fa-phone"></i></a>
+                    <a href="https://www.linkedin.com/in/sabir-ali-mondal/" target="_blank" class="hover:text-white transform hover:scale-110 transition-transform"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Sabir-Ali-Mondal" target="_blank" class="hover:text-white transform hover:scale-110 transition-transform"><i class="fab fa-github"></i></a>
+                </div>
+                <p class="mt-8 text-sm opacity-70">© 2024 Sabir Ali Mondal. All Rights Reserved.</p>
             </div>
-        </section>
-    </div>
+        </footer>
+    </main>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
-        AOS.init();
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({ duration: 800, once: true, offset: 50 });
 
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        const sidebar = document.getElementById('sidebar');
-        const sidebarToggle = document.querySelectorAll('#sidebarToggle');
-
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-theme');
-            body.classList.toggle('dark-theme');
-            themeToggle.innerHTML = body.classList.contains('dark-theme') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        });
-
-        sidebarToggle.forEach(button => {
-            button.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-                button.innerHTML = sidebar.classList.contains('open') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            
+            themeToggle.addEventListener('click', () => {
+                body.classList.toggle('light-theme');
+                body.classList.toggle('dark-theme');
+                themeToggle.innerHTML = body.classList.contains('dark-theme') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
             });
-        });
+            
+            const sidebar = document.getElementById('sidebar');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
 
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true, //This was missing from the second swiper instance.  Keeps the clickable pagination.
-                type: 'bullets', //This was added to make it clear what pagination type to use
-            },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-        });
+            sidebarToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+                sidebarToggle.innerHTML = sidebar.classList.contains('open') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    sidebar.classList.remove('open');
+                    sidebarToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
 
-        var typed = new Typed('#typed', {
-            stringsElement: '#typed-strings',
-            typeSpeed: 40,
-            backSpeed: 40,
-            loop: true
+            new Swiper('.swiper', {
+                loop: true,
+                grabCursor: true,
+                autoplay: { delay: 5000, disableOnInteraction: false },
+                pagination: { el: '.swiper-pagination', clickable: true },
+            });
         });
     </script>
 </body>
-
 </html>
