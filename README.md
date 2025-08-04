@@ -21,7 +21,7 @@ I'm a Computer Science student at **Cooch Behar Government Engineering College (
   <a href="mailto:mondaljaker4@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
   </a>
-  <a href="https://github.com/Sabir-Ali-Mondal/My-Portfolio" target="_blank">
+  <a href="https://sabirportfolio.ccbp.tech/" target="_blank">
     <img src="https://img.shields.io/badge/Portfolio-3b82f6?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio"/>
   </a>
 </p>
