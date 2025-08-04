@@ -57,9 +57,8 @@ Here are some of the projects I'm most proud of. You can find more in my reposit
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | 🏆 **Not-Pi-Vision** <br/> *(Hackathon Winner)*                               | A smart tool that converts syllabus topics into visual learning experiences for fast, free learning.    | [**GitHub Repo**](https://github.com/Sabir-Ali-Mondal/Not-Pi-Vision)                  |
 | 🤖 **Frontend-AI Chatbot**                                                | A browser-based AI chatbot built with only frontend tech, with customizable training via JSON.          | [**GitHub Repo**](https://github.com/Sabir-Ali-Mondal/Frontend-AI)                    |
-| 🙏 **Man-Us**                                                              | An AI-powered discussion platform for four fictional friends from different religions to promote dialogue.| [**GitHub Repo**](https://github.com/Sabir-Ali-Mondal/Man-Us)                         |
+| 💡 **Man-Us**                                                              | An AI-powered discussion platform for four fictional friends from different religions to promote dialogue.| [**GitHub Repo**](https://github.com/Sabir-Ali-Mondal/Man-Us)                         |
 | 💡 **Beam Focus**                                                         | An AI Learning Assistant to guide students with personalized learning, doubt clearing, and motivation.  | [**GitHub Repo**](https://github.com/Sabir-Ali-Mondal/Beam-Focus-3.0)                 |
-| 🎨 **Chitralipi Gallery**                                                 | A responsive Bootstrap 5 gallery website for showcasing stunning photography and videos.                | [**GitHub Repo**](https://github.com/Sabir-Ali-Mondal/Chitralipi-Gallery)             |
 
 ---
 
