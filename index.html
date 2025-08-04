@@ -33,16 +33,6 @@
         }
 
         .light-theme {
-            --bg-color: var(--bg-light);
-            --text-color: var(--text-light);
-            --card-bg-color: var(--card-bg-light);
-            --border-color: var(--border-light);
-            --accent-color: var(--accent-light);
-            --accent-hover-color: var(--accent-hover-light);
-            --shadow-color: var(--shadow-light);
-        }
-
-        .dark-theme {
             --bg-color: var(--bg-dark);
             --text-color: var(--text-dark);
             --card-bg-color: var(--card-bg-dark);
@@ -50,6 +40,17 @@
             --accent-color: var(--accent-dark);
             --accent-hover-color: var(--accent-hover-dark);
             --shadow-color: var(--shadow-dark);
+
+        }
+
+        .dark-theme {
+            --bg-color: var(--bg-light);
+            --text-color: var(--text-light);
+            --card-bg-color: var(--card-bg-light);
+            --border-color: var(--border-light);
+            --accent-color: var(--accent-light);
+            --accent-hover-color: var(--accent-hover-light);
+            --shadow-color: var(--shadow-light);
         }
 
         body {
@@ -96,7 +97,7 @@
         .text-accent {
             color: var(--accent-color);
         }
-        
+
         a {
             color: var(--accent-color);
             transition: color 0.3s ease;
@@ -105,9 +106,9 @@
         a:hover {
             color: var(--accent-hover-color);
         }
-        
+
         .sidebar {
-            background-color: #111827;
+            background-color: var(--bg-color);
             position: fixed;
             top: 0;
             left: 0;
@@ -138,7 +139,8 @@
             color: white;
         }
 
-        #sidebarToggle, #themeToggle {
+        #sidebarToggle,
+        #themeToggle {
             z-index: 1010;
             position: fixed;
             top: 1rem;
@@ -155,9 +157,14 @@
             -webkit-backdrop-filter: blur(5px);
         }
 
-        #sidebarToggle { left: 1rem; }
-        #themeToggle { right: 1rem; }
-        
+        #sidebarToggle {
+            left: 1rem;
+        }
+
+        #themeToggle {
+            right: 1rem;
+        }
+
         .hero-image-wrapper {
             padding: 8px;
             border-radius: 1.5rem;
@@ -165,11 +172,19 @@
             background-size: 400% 400%;
             animation: gradient-flow 10s ease infinite;
         }
-        
+
         @keyframes gradient-flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .hero-image {
@@ -177,20 +192,24 @@
             background-size: cover;
             background-position: center;
             height: 450px;
-            width: 100%;
+            width: 370px;
             border-radius: 1rem;
         }
 
         .text-gradient {
             font-weight: 800;
-            background: linear-gradient(90deg, #ff9933, #e9e9e9, #138808);
+            background: linear-gradient(100deg, #ff9933, #e9e9e9, #138808);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: text-shine 5s linear infinite;
         }
-        
-        @keyframes text-shine { to { background-position: 200% center; } }
+
+        @keyframes text-shine {
+            to {
+                background-position: 200% center;
+            }
+        }
 
         .btn {
             display: inline-block;
@@ -201,37 +220,61 @@
             color: #fff !important;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
-        .btn-primary { background-color: #3b82f6; }
-        .btn-primary:hover { background-color: #2563eb; }
-        .btn-secondary { background-color: #f59e0b; }
-        .btn-secondary:hover { background-color: #d97706; }
-        
-        .tech-pill {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.25rem 0.75rem;
+
+        .btn-primary {
+            background-color: #3b82f6;
+        }
+
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+
+        .btn-secondary {
+            background-color: #f59e0b;
+        }
+
+        .btn-secondary:hover {
+            background-color: #d97706;
+        }
+
+        .tab-button {
+            padding: 0.5rem 1.5rem;
             border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin: 0.25rem;
-        }
-        .dark-theme .tech-pill {
-             background-color: var(--border-dark);
-             color: var(--text-dark);
-        }
-        .light-theme .tech-pill {
-            background-color: #e0e7ff;
-            color: #4338ca;
+            font-weight: 600;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
         }
 
-        .swiper-pagination-bullet { background: var(--accent-color); opacity: 0.5; }
-        .swiper-pagination-bullet-active { opacity: 1; }
+        .tab-button.active {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            background-color: rgba(59, 130, 246, 0.1);
+        }
 
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: grid;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet {
+            background: var(--accent-color);
+            opacity: 0.5;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -259,11 +302,11 @@
                     <div class="order-2 md:order-1 text-center md:text-left" data-aos="fade-right">
                         <h1 class="text-4xl lg:text-6xl font-bold text-gradient mb-2">Sabir Ali Mondal</h1>
                         <p class="text-2xl lg:text-3xl mb-4 font-semibold text-accent">Computer Science Student</p>
-                        <p class="mb-6 max-w-xl mx-auto md:mx-0">I'm a student at CGEC passionate about web development and AI, turning ideas into simple, innovative tools. I build lightweight, frontend-first solutions and leverage AI APIs through prompt engineering.</p>
+                        <p class="mb-6 max-w-xl mx-auto md:mx-0">A student at CGEC passionate about web development and AI, turning ideas into simple, innovative tools. I build lightweight, frontend-first solutions and leverage AI APIs through prompt engineering.</p>
                         <a href="#contact" class="btn btn-primary mr-2 mb-2">Contact Me</a>
-                        <a href="#" class="btn btn-secondary mb-2"><i class="fas fa-file-pdf mr-2"></i>View Resume</a>
+                        <a href="https://drive.google.com/file/d/10_U9iHkN32UkJTeVl9R5ZIhpRot1SBJv/view?usp=drive_link" target="_blank" class="btn btn-secondary mb-2"><i class="fas fa-file-pdf mr-2"></i>View Resume</a>
                     </div>
-                    <div class="order-1 md:order-2" data-aos="fade-left" data-aos-delay="200">
+                    <div class="order-1 md:order-2" style="margin-top:60px;" data-aos="fade-left" data-aos-delay="200">
                         <div class="hero-image-wrapper">
                             <div class="hero-image"></div>
                         </div>
@@ -271,65 +314,129 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="projects" class="py-20">
             <div class="main-container">
-                <h2 class="section-title">Innovative Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <h2 class="section-title">Projects & Creative Works</h2>
+                <div id="project-tabs" class="flex justify-center flex-wrap gap-4 mb-8" data-aos="fade-up">
+                    <button class="tab-button active" data-tab="featured">Featured</button>
+                    <button class="tab-button" data-tab="early">Early Web</button>
+                    <button class="tab-button" data-tab="creative">Creative</button>
+                    <button class="tab-button" data-tab="more" style="color:blue;">More</button>
+                </div>
+
+                <div id="featured" class="tab-content active grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Sabir-Ali-Mondal/Not-Pi-Vision/main/assets/cover.png" alt="Not-Pi-Vision Project" class="rounded-lg mb-4 w-full h-48 object-cover">
-                        <h3 class="text-xl font-bold mb-2">Not-Pi-Vision <span class="text-xs font-semibold text-accent">(Hackathon)</span></h3>
-                        <p class="mb-4 text-sm flex-grow">A smart tool that converts syllabus topics into visual learning experiences, designed as a fast, free, and lightweight alternative to PPT lessons for students and educators.</p>
-                        <div class="mt-auto">
-                            <div class="flex flex-wrap mb-2">
-                                <span class="tech-pill">JS</span><span class="tech-pill">Node.js</span><span class="tech-pill">Gemini API</span><span class="tech-pill">Prompt Eng.</span>
-                            </div>
-                            <a href="https://github.com/Sabir-Ali-Mondal/Not-Pi-Vision" target="_blank" class="font-semibold hover:underline">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
-                        </div>
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7351447997320220672?compact=1" height="192" width="504" frameborder="0" allowfullscreen title="Embedded post" class="rounded-lg mb-4 w-full h-48">
+                        </iframe>
+                        <h3 class="text-xl font-bold mb-2">Not-Pi-Vision <span class="text-xs font-semibold text-accent">(Hackathon Winner)</span></h3>
+                        <p class="mb-4 text-sm flex-grow">A smart tool that converts syllabus topics into visual learning experiences, designed as a fast, free, and lightweight alternative to PPT lessons.</p>
+                        <a href="https://github.com/Sabir-Ali-Mondal/Not-Pi-Vision" target="_blank" class="font-semibold hover:underline mt-auto">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                     <div class="card" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://raw.githubusercontent.com/Sabir-Ali-Mondal/Frontend-AI/main/assets/cover.png" alt="Frontend-AI Chatbot" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7352579918574071808?compact=1" height="192" width="504" frameborder="0" allowfullscreen title="Embedded post" class="rounded-lg mb-4 w-full h-48">
+                        </iframe>
                         <h3 class="text-xl font-bold mb-2">Frontend-AI Chatbot</h3>
-                        <p class="mb-4 text-sm flex-grow">A browser-based AI chatbot built only with frontend technologies. It supports intelligent Q&A, dynamic calculations, and fully customizable training via JSON.</p>
-                        <div class="mt-auto">
-                           <div class="flex flex-wrap mb-2">
-                               <span class="tech-pill">HTML</span><span class="tech-pill">CSS</span><span class="tech-pill">JavaScript</span><span class="tech-pill">JSON</span>
-                           </div>
-                           <a href="https://github.com/Sabir-Ali-Mondal/Frontend-AI" target="_blank" class="font-semibold hover:underline">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
-                        </div>
+                        <p class="mb-4 text-sm flex-grow">A browser-based AI chatbot built only with frontend technologies. It supports intelligent Q'&'A, dynamic calculations, and fully customizable training via JSON.</p>
+                        <a href="https://github.com/Sabir-Ali-Mondal/Frontend-AI" target="_blank" class="font-semibold hover:underline mt-auto">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
-                     <div class="card" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://raw.githubusercontent.com/Sabir-Ali-Mondal/Man-Us/main/assets/cover.png" alt="Man-Us Project" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7307691224826556417?compact=1" height="192" width="504" frameborder="0" allowfullscreen title="Embedded post" class="rounded-lg mb-4 w-full h-48">
+                        </iframe>
                         <h3 class="text-xl font-bold mb-2">Man-Us</h3>
                         <p class="mb-4 text-sm flex-grow">A respectful discussion platform for four fictional friends from different religions. Uses AI to support storytelling, moral exchange, and balanced conversation.</p>
-                        <div class="mt-auto">
-                            <div class="flex flex-wrap mb-2">
-                                <span class="tech-pill">Node.js</span><span class="tech-pill">SQLite</span><span class="tech-pill">Gemini API</span><span class="tech-pill">Bootstrap</span>
-                            </div>
-                            <a href="https://github.com/Sabir-Ali-Mondal/Man-Us" target="_blank" class="font-semibold hover:underline">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
-                        </div>
+                        <a href="https://github.com/Sabir-Ali-Mondal/Man-Us" target="_blank" class="font-semibold hover:underline mt-auto">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                     <div class="card" data-aos="fade-up">
-                        <img src="https://via.placeholder.com/400x225/0d1117/58a6ff?text=Outside+of+Egg" alt="Outside of Egg Project" class="rounded-lg mb-4 w-full h-48 object-cover">
-                        <h3 class="text-xl font-bold mb-2">Outside of Egg</h3>
-                        <p class="mb-4 text-sm flex-grow">A team project to help kids explore concepts beyond textbooks. Features imagination-based question answering, speech recognition, and concept exploration.</p>
-                         <div class="mt-auto">
-                            <div class="flex flex-wrap mb-2">
-                                <span class="tech-pill">Vercel</span><span class="tech-pill">Node.js</span><span class="tech-pill">Gemini API</span><span class="tech-pill">ChatGPT</span>
-                            </div>
-                            <a href="https://github.com/Sabir-Ali-Mondal/Outside-of-Egg" target="_blank" class="font-semibold hover:underline">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7280589416408985600?compact=1" height="192" width="504" frameborder="0" allowfullscreen title="Embedded post" class="rounded-lg mb-4 w-full h-48">
+                        </iframe>
+                        <h3 class="text-xl font-bold mb-2">Outside of Egg 2.0 <span class="text-xs font-semibold text-accent">(Gamified AI)</span></h3>
+                        <p class="mb-4 text-sm flex-grow">
+                            A fun AI-powered storytelling app for kids with translation, offline save, and creative learning features.
+                        </p>
+                        <a href="https://github.com/Sabir-Ali-Mondal/Outside-of-egg-2.0" target="_blank" class="font-semibold hover:underline mt-auto">
+                            View on GitHub <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7264814903419367424?compact=1" height="192" width="504" frameborder="0" allowfullscreen title="Embedded post" class="rounded-lg mb-4 w-full h-48">
+                        </iframe>
+                        <h3 class="text-xl font-bold mb-2">Beam Focus <span class="text-xs font-semibold text-accent">(Hackathon)</span></h3>
+                        <p class="mb-4 text-sm flex-grow">An AI Learning Assistant to guide students with personalized learning, doubt clearing, and streak tracking. Evolved through multiple versions.</p>
+                        <a href="https://github.com/Sabir-Ali-Mondal/Beam-Focus-3.0" target="_blank" class="font-semibold hover:underline mt-auto">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+
+                </div>
+                <div id="early" class="tab-content grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1731992312/Date_Counter_v3stla.gif" alt="Dynamic Countdown Animation" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Dynamic Countdown Animations</h3>
+                        <p class="mb-4 text-sm flex-grow">Creative projects using canvas and JavaScript to generate engaging, GIF-like countdown animations with dynamic visual effects.</p>
+                        <a href="https://dateanimnready.ccbp.tech/" target="_blank" class="font-semibold hover:underline mt-auto">View Project <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1732346810/ConceptVision_uw7cbw.gif" alt="Concept Visioner" class="rounded-lg mb-4 w-full h-48 object-cover">
+
+                        <h3 class="text-xl font-bold mb-2">Concept Visioner <span class="text-xs font-semibold text-accent">(EdTech)</span></h3>
+                        <p class="mb-4 text-sm flex-grow">
+                            A visual learning platform using interactive topic-based visualizations to simplify primary education.
+                        </p>
+                        <div class="flex flex-col gap-1 text-sm mb-2">
+                            <a href="https://conceptvisioner.ccbp.tech/" target="_blank" class="font-semibold text-blue-600 hover:underline">
+                                🌐 Visit Website
+                            </a>
+
+                            <a href="https://github.com/Sabir-Ali-Mondal/Concept-Visioner" target="_blank" class="font-semibold hover:underline mt-auto">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+
                         </div>
                     </div>
-                    <div class="card" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://raw.githubusercontent.com/Sabir-Ali-Mondal/Beam-Focus/main/assets/cover.png" alt="Beam Focus Project" class="rounded-lg mb-4 w-full h-48 object-cover">
-                        <h3 class="text-xl font-bold mb-2">Beam Focus <span class="text-xs font-semibold text-accent">(Hackathon)</span></h3>
-                        <p class="mb-4 text-sm flex-grow">An AI Learning Assistant designed to guide students with a personalized learning map, featuring AI-driven doubt clearing, streak tracking, and YouTube integration.</p>
-                         <div class="mt-auto">
-                            <div class="flex flex-wrap mb-2">
-                                <span class="tech-pill">JS</span><span class="tech-pill">Bootstrap</span><span class="tech-pill">ChatGPT</span><span class="tech-pill">Perplexity AI</span>
-                            </div>
-                            <a href="https://github.com/Sabir-Ali-Mondal/Beam-Focus" target="_blank" class="font-semibold hover:underline">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+
+                    <div class="card" data-aos="fade-up">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7293986133095395329?compact=1" height="192" width="504" frameborder="0" allowfullscreen title="Embedded post" class="rounded-lg mb-4 w-full h-48">
+                        </iframe>
+                        <h3 class="text-xl font-bold mb-2">Chitralipi Gallery <span class="text-xs font-semibold text-accent">(Photography Website)</span></h3>
+                        <p class="mb-4 text-sm flex-grow">
+                            A responsive Bootstrap 5 Gallery for showcasing stunning photos and videos.
+                        </p>
+                        <div class="flex flex-col gap-1 text-sm mb-2">
+                            <a href="https://chitralipi.ccbp.tech/" target="_blank" class="font-semibold text-blue-600 hover:underline">
+                                🌐 Live Site
+                            </a>
+                            <a href="https://github.com/Sabir-Ali-Mondal/Chitralipi-Gallery" target="_blank" class="font-semibold hover:underline mt-auto">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
+                    </div>
+
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1737058608/tplImgc5aea15e8dda48d189737e15735f13d8_in4shp.png" alt="HTML & CSS Collection" class="rounded-lg mb-4  h-48 object-cover">
+                        <h3 class="text-xl font-bold mb-2">HTML & Bootstrap Collection</h3>
+                        <p class="mb-4 text-sm flex-grow">A showcase of various static websites and components demonstrating responsive web design fundamentals with HTML, CSS, and Bootstrap.</p>
+                        <a href="https://github.com/Sabir-Ali-Mondal/Collection-of-HTML-and-CSS-projects" target="_blank" class="font-semibold hover:underline mt-auto">View Collection <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div id="creative" class="tab-content grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1731894937/FFFFFF_2_kn9flf.png" alt="Poems" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Poetry Collection</h3>
+                        <p class="mb-4 text-sm flex-grow">A collection of poems that I've written since childhood, exploring creativity through words on my personal blog.</p>
+                        <a href="https://newinventionsabir.blogspot.com/" target="_blank" class="font-semibold hover:underline mt-auto">View Blogger Posts <i class="fas fa-feather-alt ml-1"></i></a>
+                    </div>
+                    <div class="card" data-aos="fade-up">
+                        <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1731939876/WhatsApp_Image_2024-11-18_at_5.32.57_PM_ffncfc.jpg" alt="YouTube Channel" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Tech YouTube Channel</h3>
+                        <p class="mb-4 text-sm flex-grow">Videos on cloud computing, AI/ML, AI tools like ChatGPT, and no-code tools. Exploring VR, AR, MR, and XR through short-form videos.</p>
+                        <a href="https://www.youtube.com/@SabirAliMondal1" target="_blank" class="font-semibold hover:underline mt-auto">View Channel <span class="text-sm text-italic" style="color:red;">(Banned by YouTube)</span><i class="fab fa-youtube ml-1"></i></a>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://res.cloudinary.com/dmttn34te/image/upload/v1732017325/newinventionchannels4_banner_ezbioo.jpg" alt="Previous YouTube Channel" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-bold mb-2">New Invention Channel</h3>
+                        <p class="mb-4 text-sm flex-grow">My earlier channel sharing innovative ideas, computer tips, Android tricks, Termux hacks, and educational content for young minds.</p>
+                        <a href="https://www.youtube.com/@newinvention2517" target="_blank" class="font-semibold hover:underline mt-auto">View Channel <i class="fab fa-youtube ml-1"></i></a>
+                    </div>
+                </div>
+                <div id="more" class="tab-content grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <a href="https://github.com/Sabir-Ali-Mondal?tab=repositories" target="_blank" class="font-semibold hover:underline mt-auto">View Repositories <i class="fas fa-arrow-right ml-1"></i></a>
+                        <hr class="mt-4 mb-4">
                     </div>
                 </div>
             </div>
@@ -355,11 +462,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="card" data-aos="fade-up">
                         <h4 class="text-xl font-bold mb-3"><i class="fas fa-laptop-code mr-2 text-accent"></i>Frontend</h4>
-                        <p>HTML, CSS, JavaScript, Bootstrap</p>
+                        <p>HTML, CSS, JavaScript (Worked With), Bootstrap</p>
                     </div>
                     <div class="card" data-aos="fade-up" data-aos-delay="100">
                         <h4 class="text-xl font-bold mb-3"><i class="fas fa-server mr-2 text-accent"></i>Backend & Cloud</h4>
-                        <p>Node.js, AWS, Vercel</p>
+                        <p>Node.js (Worked With), AWS (Worked With), Vercel</p>
                     </div>
                     <div class="card" data-aos="fade-up" data-aos-delay="200">
                         <h4 class="text-xl font-bold mb-3"><i class="fas fa-brain mr-2 text-accent"></i>AI & APIs</h4>
@@ -404,10 +511,22 @@
                 <h2 class="section-title">Testimonials</h2>
                 <div class="swiper max-w-4xl mx-auto" data-aos="fade-up">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide card text-center"><p class="text-lg italic mb-4">"Sabir is a highly skilled and dedicated developer. He consistently exceeded expectations on our project."</p><p class="font-bold">- Arif Sheikh, <span class="text-accent">Whatsapp Status Manager</span></p></div>
-                        <div class="swiper-slide card text-center"><p class="text-lg italic mb-4">"Working with Sabir was a pleasure. His communication is excellent, and his code is clean and efficient."</p><p class="font-bold">- Akash Shah, <span class="text-accent">CEO of SSB</span></p></div>
-                        <div class="swiper-slide card text-center"><p class="text-lg italic mb-4">"Sabir’s ability to solve complex problems quickly was invaluable to our team."</p><p class="font-bold">- Afsan Rahaman, <span class="text-accent">Experienced Senior</span></p></div>
-                        <div class="swiper-slide card text-center"><p class="text-lg italic mb-4">"I highly recommend Sabir. His technical skills and professionalism are top-notch."</p><p class="font-bold">- Jesmin Khatun, <span class="text-accent">CEO at 'Speed Talk'</span></p></div>
+                        <div class="swiper-slide card text-center">
+                            <p class="text-lg italic mb-4">"Sabir is a highly skilled and dedicated developer. He consistently exceeded expectations..."</p>
+                            <p class="font-bold">- Arif Sheikh, <span class="text-accent">Whatsapp Status Manager</span></p>
+                        </div>
+                        <div class="swiper-slide card text-center">
+                            <p class="text-lg italic mb-4">"Working with Sabir was a pleasure. His communication is excellent, and his code is clean..."</p>
+                            <p class="font-bold">- Akash Shah, <span class="text-accent">CEO of SSB</span></p>
+                        </div>
+                        <div class="swiper-slide card text-center">
+                            <p class="text-lg italic mb-4">"Sabir’s ability to solve complex problems quickly was invaluable to our team."</p>
+                            <p class="font-bold">- Afsan Rahaman, <span class="text-accent">Experienced Senior</span></p>
+                        </div>
+                        <div class="swiper-slide card text-center">
+                            <p class="text-lg italic mb-4">"I highly recommend Sabir. His technical skills and professionalism are top-notch."</p>
+                            <p class="font-bold">- Jesmin Khatun, <span class="text-accent">CEO at 'Speed Talk'</span></p>
+                        </div>
                     </div>
                     <div class="swiper-pagination mt-8"></div>
                 </div>
@@ -432,27 +551,28 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({ duration: 800, once: true, offset: 50 });
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50
+            });
 
             const themeToggle = document.getElementById('themeToggle');
             const body = document.body;
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            
             themeToggle.addEventListener('click', () => {
                 body.classList.toggle('light-theme');
                 body.classList.toggle('dark-theme');
                 themeToggle.innerHTML = body.classList.contains('dark-theme') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
             });
-            
+
             const sidebar = document.getElementById('sidebar');
             const sidebarToggle = document.getElementById('sidebarToggle');
             const sidebarLinks = document.querySelectorAll('.sidebar-link');
-
             sidebarToggle.addEventListener('click', () => {
                 sidebar.classList.toggle('open');
                 sidebarToggle.innerHTML = sidebar.classList.contains('open') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
             });
-            
             sidebarLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     sidebar.classList.remove('open');
@@ -463,10 +583,33 @@
             new Swiper('.swiper', {
                 loop: true,
                 grabCursor: true,
-                autoplay: { delay: 5000, disableOnInteraction: false },
-                pagination: { el: '.swiper-pagination', clickable: true },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+            });
+
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    const tabId = button.dataset.tab;
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === tabId) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
             });
         });
     </script>
 </body>
+
 </html>
